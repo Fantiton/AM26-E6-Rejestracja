@@ -2,23 +2,43 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private void ConfirmButton_Clicked(object sender, EventArgs e)
         {
-            count++;
+            string email = emailEntry.Text;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            bool isEmail = false;
+            for (int i = 0; i < email.Length; i++)
+            {
+                if (email[i] == '@') isEmail = true;
+            }
+
+            string password1 = passwordEntry.Text;
+            string password2 = repeatPasswordEntry.Text;
+
+            bool isPasswordCorrect = false;
+            if (password1 == password2)
+            {
+                isPasswordCorrect = true;
+            }
+
+            if (!isEmail)
+            {
+                outputLabel.Text = "e-mail jest niepoprawny";
+            }
+            else if (!isPasswordCorrect)
+            {
+                outputLabel.Text = "hasła się różnią";
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                outputLabel.Text = $"witaj {email}";
+            }
         }
     }
 }

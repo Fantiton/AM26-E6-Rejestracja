@@ -4,16 +4,16 @@
              x:Class="AM26_E6_Rejestracja.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout>
-            <Label Text="Rejestuj konto"/>
+        <VerticalStackLayout BackgroundColor="LightGray">
+            <Label Text="Rejestuj konto" BackgroundColor="Teal" TextColor="White" FontSize="Large"/>
             <Label Text="Podaj e-mail:"/>
-            <Entry x:Name="emailEntry" Placeholder="email"/>
+            <Entry x:Name="emailEntry" Placeholder="email" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
             <Label Text="Podaj hasło"/>
-            <Entry x:Name="passwordEntry" IsPassword="True"/>
+            <Entry x:Name="passwordEntry" IsPassword="True" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
             <Label Text="Powtórz hasło"/>
-            <Entry x:Name="repeatPasswordEntry" IsPassword="True"/>
-            <Button x:Name="ConfirmButton" Text="ZATWIERDŹ" HorizontalOptions="Center"/>
-            <Label x:Name="outputLabel" HorizontalOptions="Center"/>
+            <Entry x:Name="repeatPasswordEntry" IsPassword="True" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+            <Button x:Name="ConfirmButton" Text="ZATWIERDŹ" HorizontalOptions="Center" BackgroundColor="Gray" Clicked="ConfirmButton_Clicked"/>
+            <Label x:Name="outputLabel" HorizontalOptions="Center" Text="Autor: Musztardowy Potwór"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
